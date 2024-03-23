@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход в аккаунт</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/logreg.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/" class="top-button">Главная</a>
+        <a href="/alluser" class="top-button">Все</a>
+    </div>
+    <div class="content">
+        <div class="rounded-box">
+            <h2 class="fadeIn">Вход в аккаунт</h2>
+        </div>
+        <form action="/login" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <input type="submit" value="Войти">
+            {% if error %}
+            <div class="error-message">{{ error }}</div>
+            {% endif %}
+        </form>
+         <a href="/register" class="button-link">Перейти на страницу регистрации</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/logreg.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход в аккаунт</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/emailswitch.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/" class="top-button">Главная</a>
+        <a href="/alluser" class="top-button">Все</a>
+        <a href="/account" class="top-button">Аккаунт</a>
+    </div>
+    <div class="content">
+        <div class="rounded-box">
+            <h2 class="fadeIn">Смена почты</h2>
+        </div>
+        <form action="/account/emailchange" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="name">Имя:</label>
+            <input type="name" id="name" name="name" required><br><br>
+            <input type="submit" value="Далее">
+            {% if error %}
+            <div class="error-message">{{ error }}</div>
+            {% endif %}
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/emailswitch.js') }}"></script>
+</body>
+</html>

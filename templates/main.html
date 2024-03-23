@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фотообменник</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+        <a href="/account" class="top-button">Аккаунт</a>
+        <a href="/myalbum" class="top-button">Мои альбомы</a>
+        <a href="/alluser" class="top-button">Все</a>
+    </div>
+    <div class="container">
+      <h1>Добро пожаловать на Фотообменник!</h1>
+      <p>Загружайте, делитесь и наслаждайтесь фотографиями</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="features">
+        <h2>Возможности:</h2>
+        <div class="feature">
+            
+          <img src="/static/img/upload.webp" alt="Upload Icon">
+          <h3>Загрузка фотографий</h3>
+          <p>Простой способ загружать ваши фотографии на наш сервис.</p>
+        </div>
+        <div class="feature">
+          <img src="/static/img/share.webp" alt="Share Icon">
+          <h3>Делитесь с друзьями</h3>
+          <p>Поделитесь своими фотографиями с друзьями и семьей в один клик.</p>
+        </div>
+        <div class="feature">
+          <img src="/static/img/explore.webp" alt="Explore Icon">
+          <h3>Откройте новое</h3>
+          <p>Исследуйте удивительные фотографии, загруженные другими пользователями.</p>
+        </div>
+      </section>
+    </div>
+    
+  </main>
+  <div class="rounded-box">
+    <a href="/account" class="rounded-box">Далее</a></div>
+    <div class="slider">
+        <div class="slide active">
+          <h2>Безопасность</h2>
+          <p>Мы не храним ваши пароли, только хэш сумму, которую даже мы не можем расшифровать.</p>
+        </div>
+        <div class="slide">
+          <h2>Удобство</h2>
+          <p>Мы постоянно трудимся, чтобы вам было удобно пользоваться нашим сервисом.</p>
+        </div>
+        <div class="slide">
+          <h2>Эксклюзивность</h2>
+          <p>Мы предоставляем вам возможности, которые вы не получите в другом месте.</p>
+        </div>
+      </div>
+      
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Фотообменник. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

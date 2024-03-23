@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ albumname }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/album.css') }}">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="/myalbum" class="button-author">Мои альбомы</a>
+            <a href="/account" class="button-author">Аккаунт</a>
+            <a href="/alluser" class="button-author">Все</a>
+            <a href="/" class="button-author">Главная</a>
+            <h1>Альбом: {{ albumname }}</h1>
+            {% if is_author %}
+                <button class="button-author" onclick="deleteAlbum()">Удалить альбом</button>
+                <button class="button-author" onclick="renameAlbum()">Переименовать</button>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <button class="button-author" type="submit">Добавить</button>
+                    <input type="file" id="image-input" name="image">
+                </form>
+                <div id="result"></div>
+            {% endif %}
+            {% if is_author %}
+                <div id="is-author" style="display: none;">true</div>
+            {% else %}
+                <div id="is-author" style="display: none;">false</div>
+            {% endif %}
+
+        </div>
+        <a href="/view/{{ user_id }}"></a>
+    </header>
+    <div id="photos"></div>
+
+    <script src="{{ url_for('static', filename='js/album.js') }}"></script>
+</body>
+</html>

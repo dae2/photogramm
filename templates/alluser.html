@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/alluser.css') }}">
+
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/myalbum" class="top-button">Мои альбомы</a>
+        <a href="/account" class="top-button">Аккаунт</a>
+        <a href="/" class="top-button">Главная</a>
+    </div>
+    <div class="container">
+        <h1>User List</h1>
+        <ul id="userList" class="user-list"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/alluser.js') }}"></script>
+</body>
+</html>
